@@ -21,7 +21,7 @@ function deploy_kpt_pkg {
 
   local temp=$(mktemp -d -t kpt-XXXX)
   local localpkg="$temp/$name"
-  kpt pkg get --for-deployment "https://github.com/nephio-project/nephio-example-packages.git/$pkg" "$localpkg"
+  kpt pkg get --for-deployment "https://github.com/johnbelamaric/nephio-example-packages.git/$pkg" "$localpkg"
   # sudo because docker
   sudo kpt fn render "$localpkg"
   kpt live init "$localpkg"
@@ -96,10 +96,10 @@ else
     chmod 644 "$HOME/.kube/config"
 
     # I don't know how to make ansible do what I want, this is what I want
-    deploy_kpt_pkg "repository@repository/v2" "mgmt"
-    deploy_kpt_pkg "rootsync@rootsync/v2" "mgmt"
+    deploy_kpt_pkg "repository@no-pkg-ctx" "mgmt"
+    deploy_kpt_pkg "rootsync@no-pkg-ctx" "mgmt"
 
-    deploy_kpt_pkg "repository@repository/v2" "mgmt-staging"
+    deploy_kpt_pkg "repository@no-pkg-ctx" "mgmt-staging"
 fi
 
 echo "Done installing Nephio Sandbox Environment"

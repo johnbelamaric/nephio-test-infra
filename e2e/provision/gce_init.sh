@@ -25,8 +25,8 @@ DEBUG=$(get_metadata nephio-setup-debug "false")
 
 DEPLOYMENT_TYPE=$(get_metadata nephio-setup-type "r1")
 RUN_E2E=$(get_metadata nephio-run-e2e "false")
-REPO=$(get_metadata nephio-test-infra-repo "https://github.com/nephio-project/test-infra.git")
-BRANCH=$(get_metadata nephio-test-infra-branch "main")
+REPO=$(get_metadata nephio-test-infra-repo "https://github.com/johnbelamaric/nephio-test-infra.git")
+BRANCH=$(get_metadata nephio-test-infra-branch "no-pkg-ctx")
 
 echo "$DEBUG, $DEPLOYMENT_TYPE, $RUN_E2E, $REPO, $BRANCH"
 
