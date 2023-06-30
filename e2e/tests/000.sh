@@ -29,3 +29,5 @@ kubeconfig="$HOME/.kube/config"
 porch=/tmp/kpt-pkg/porch-dev
 kpt fn eval --image "gcr.io/kpt-fn/set-image:v0.1.1" $porch -- name=nephio/porch-server newTag=jbelamaric
 kpt live apply $porch
+
+sleep 5
