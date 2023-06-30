@@ -38,5 +38,5 @@ sleep 5
 kpt alpha rpkg approve -n default "$regional_pkg_rev"
 
 k8s_wait_exists "$kubeconfig" 600 "default" "workloadcluster" "regional"
-k8s_wait_exists "$kubeconfig" 600 "default" "cluster" "regional"
-k8s_wait_ready "$kubeconfig" 600 "default" "cluster" "regional"
+k8s_wait_exists "$kubeconfig" 600 "default" "cl" "regional"
+k8s_wait_ready "$kubeconfig" 600 "default" "cl" "regional"
