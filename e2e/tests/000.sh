@@ -9,7 +9,7 @@
 ##############################################################################
 
 ## TEST METADATA
-## TEST-NAME: Deploy regional workload cluster
+## TEST-NAME: Run experimental porch server
 ##
 
 set -o pipefail
@@ -26,6 +26,6 @@ source "${LIBDIR}/k8s.sh"
 
 kubeconfig="$HOME/.kube/config"
 
-porch=/tmp/porch-dev
+porch=/tmp/kpt-pkg/porch-dev
 kpt fn eval --image "gcr.io/kpt-fn/set-image:v0.1.1" $porch -- name=nephio/porch-server newTag=jbelamaric
 kpt live apply $porch
