@@ -17,7 +17,7 @@ gitea:
     password: secret
 
 nephio_pkg_version: v1.0.1
-nephio_example_repo_uri: https://github.com/nephio-project/nephio-example-packages.git
+nephio_example_repo_uri: https://github.com/johnbelamaric/nephio-example-packages.git
 
 nephio_stock_repos:
   - name: nephio-example-packages
@@ -40,7 +40,7 @@ nephio:
     packages:
       - repo_uri: "{{ nephio_example_repo_uri }}"
         pkg: porch-dev
-        version: "{{ nephio_pkg_version }}"
+        version: jbelamaric
         async: 480
         poll: 5
       - repo_uri: "{{ nephio_example_repo_uri }}"
